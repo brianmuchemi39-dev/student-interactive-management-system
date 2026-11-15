@@ -4,42 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Student Registration & Records</title>
+    <link rel="stylesheet" href="style.css">
+   
 </head>
 
 <body>
 
-    <form action="Regisration"></form>
-    <label for="Student full name"> Student name</label>
-    <input type="text" placeholder="Fullname">
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm">
+        <label for="fullname">Student name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Fullname">
 
-    <label for="Age"> Age</label>
-    <input type="text" placeholder="Age">
+        <label for="Age">Age</label>
+        <input type="text" id="Age" name="age" placeholder="Age">
 
-    <label for="Gender"> Gender</label>
-     <select name="Gender" id="Gender">
-     <option value=""disabled selected>select gender</option>
-     <option value="male">Male</option>
-     <option value="female">Female</option>
-     <option value="neutral">Neutral</option>
+        <label for="Gender">Gender</label>
+        <select name="Gender" id="Gender">
+            <option value="" disabled selected>select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="neutral">Neutral</option>
+        </select>
 
-     </select>
+        <label for="Course">Course</label>
+        <select name="Course" id="Course">
+            <option value="" disabled selected>Select course</option>
+            <option value="Software development">Software development</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Networking">Networking</option>
+        </select>
+
+        <label for="Marks">Marks</label>
+        <input type="text" id="marks" name="marks" placeholder="Marks">
+        
+        <button type="submit">REGISTER</button>
+    </form>
+    
+    <div id="error-message"></div>
+
+  
+    <!--summary table-->
+    <h2> SUMMARY TABLE</h2>
+    <div>
+        <p><strong>Total Students : <span id = totalStudents>0</span></strong></p>
+        <p><strong>Average Marks : <span id="averagemarks">0</span></strong></p>
+        <p><strong>Passed (50-100): <span id="passed">0</span></strong> |<strong> Failed (0-49) : <span id="failed">0</span></strong></p>
+    </div>
+    
+    <!--students record table-->
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Marks</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <!--to be filled by javascript-->
+        </tbody>
+    </table>
 
 
-    <label for="Course"> Course</label>
-    <select name="Course" id="Course">
-     <option value=""disabled selected>Select course</option>
-     <option value="Software development">Software development</option>
-     <option value="Web Design">Web Design</option>
-     <option value="Data Analysis">Data Analysis</option>
-     <option value="Cyber Security">Cyber Security</option>
-     <option value="Networking">Networking</option>
-     
-    </select>
 
-    <label for="Marks"> Marks</label>
-    <input type="text" placeholder="Marks">
-    <button> REGISTER</button>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
